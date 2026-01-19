@@ -22,7 +22,7 @@ git remote add STICH git@github.com:darsiya77/stich.git
 
 git branch AddHibernateInProject  # Добавление ветки AddHibernateInProject
 git branch                        # Показывает текущую ветку, на которой находимся
-git branch -d название вктки      # Удалить соответсвующую ветку
+git branch -d название вктки      # Удалить соответсвующую ветgit push -u origin mainку
 git checkout название ветки       # Переключиться на ветку с указанным названием
 git merge название ветки          # слияние указанной ветки с главной веткой master/main
 

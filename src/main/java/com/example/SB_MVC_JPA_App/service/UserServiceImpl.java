@@ -5,6 +5,7 @@ import com.example.SB_MVC_JPA_App.dao.UserDAO;
 import com.example.SB_MVC_JPA_App.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,26 +19,31 @@ public class UserServiceImpl implements UserService {
         this.userDAO = userDAO;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<User> scroll() {
         return userDAO.scroll();
     }
 
+    @Transactional(readOnly = true)
     @Override
     public User showUser(int id) {
         return userDAO.showUser(id);
     }
 
+    @Transactional
     @Override
     public void save(User person) {
         userDAO.save(person);
     }
 
+    @Transactional
     @Override
     public void update(int id, User updatedPerson) {
         userDAO.update(id, updatedPerson);
     }
 
+    @Transactional
     @Override
     public void delete(int id) {
         userDAO.delete(id);
